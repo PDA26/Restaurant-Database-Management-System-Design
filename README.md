@@ -19,10 +19,10 @@ Kusha Choudhary:	Choudhary.Kus@northeastern.edu
 ##Problem Statement
 
 The existing system of the restaurant is maintained manually making it time consuming and tedious.
-•	All data is maintained manually, increasing the chances of error and complexity of maintenance. 
-•	The same data is entered every day, which is a redundant process.
-•	No database available for the employees, customers, and the prime members.
-•	There is no system of reserving the table online.
-•	The food cannot be ordered online for delivery.
-•	The option of going contactless in the restaurant during covid was not available.
-•	Audit of inventory and transactions is difficult.
+-	All data is maintained manually, increasing the chances of error and complexity of maintenance. 
+-	The same data is entered every day, which is a redundant process.
+-	No database available for the employees, customers, and the prime members.
+-	There is no system of reserving the table online.
+-	The food cannot be ordered online for delivery.
+-	The option of going contactless in the restaurant during covid was not available.
+-	Audit of inventory and transactions is difficult.
