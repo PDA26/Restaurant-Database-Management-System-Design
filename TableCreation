@@ -1,0 +1,1167 @@
+SET SERVEROUTPUT ON;
+DECLARE
+nCount NUMBER;
+BEGIN
+SELECT count(*) into nCount FROM user_tables where table_name ='EMPLOYEE';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('EMPLOYEE TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE EMPLOYEE(
+  ID NUMBER(8) NOT NULL,
+  FIRSTNAME CHAR (255) NOT NULL,
+  LASTNAME CHAR (255) NOT NULL,
+  ADDRESS CHAR (255) NOT NULL,
+  ZIPCODE NUMBER (5) NOT NULL,
+  PHONENUM NUMBER (10) NOT NULL,
+  STATUS VARCHAR2 (20) NOT NULL,
+  CONSTRAINT EMPLOYEE_PK PRIMARY KEY (ID))'; 
+  
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (117,''Daniel'',''Williams'',''Downtown'',2110,7654563456,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (118,''Susan'',''Harris'',''	Brookline'',2446,7654563456,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (119,''Laura'',''Anderson'',''Somerville'',2143,8763456789,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (120,''Sean'',''Martin'',''Fenway'',2115,8645387656,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (213,''Paul'',''Lopez'',''Dunstable'',2134,9864563468,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (214,''Mary'',''Gonzales'',''Duxbury'',2135,9864563469,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (215,''Patricia'',''Wilson'',''East Boston'',2136,9864563470,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (216,''Jennifer'',''Anderson'',''East Bridgewater'',2137,9864563471,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (101,''Bella'',''Joseph'',''Hungtinton'',2120,8572697912,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (102,''James'',''Smith'',''Tremont Street'',2111,8345627898,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (103,''William'',''Johnson'',''Mass Ave'',2115,6547892345,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (104,''Liam'',''Brown'',''Cambridge'',2167,7652349865,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (105,''Danny'',''Jones'',''Harvard Square'',2138,6759863567,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (106,''Oliver'',''Davis'',''Roxbury'',2120,7652348967,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (107,''Isabella'',''Miller'',''Mission Hill'',1234,3674524576,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (108,''Noah'',''Wilson'',''Brigham Circle'',2345,6782542456,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (109,''Henry'',''Thomas'',''Longwood'',2267,8346572345,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (110,''Alexander'',''Taylor'',''Bolysten Street'',2786,6564761243,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (111,''Lucas'',''Lewis'',''Mission Main'',2456,8762346754,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (112,''Evelyn'',''Allen'',''Cambridge'',2167,6546738745,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (217,''Linda'',''Thomas'',''East Walpole'',2138,9864563472,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (218,''Elizabeth'',''Taylor'',''East Weymouth'',2139,9864563473,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (200,''Aiden'',''Maben'',''Burlington'',2420,8645634567,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (201,''Emma'',''Mabile'',''Bedford'',2122,9864563456,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (202,''Luna'',''Hill'',''Quincy'',2345,9643566756,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (203,''Owen'',''Green'',''Milford'',2346,6234986656,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (204,''Sophia'',''Adams'',''Lowell'',2347,6354576892,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (205,''Sebastian'',''Rivera'',''Georgetown'',2348,6756375884,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (207,''Joseph'',''Garcia'',''Dedham'',2128,9864563462,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (208,''Charles'',''Miller'',''Devens'',2129,9864563463,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (113,''Lucas'',''Garcia'',''Hungtinton'',2120,8763452345,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (114,''Elijah'',''Rodriguez'',''Longwood'',2267,8565432347,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (115,''Ella'',''Brown'',''Bolysten Street'',2786,8653478756,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (116,''Amelia'',''Welsh'',''Longwood'',2267,8576354494,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (209,''Christopher'',''Davis'',''Dorchester'',2130,9864563464,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (210,''Daniel'',''Rodriguez'',''Dorchester Center'',2131,9864563465,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (211,''Matthew'',''Martinez'',''Dover'',2132,9864563466,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (212,''Donald'',''Hernandez'',''Dracut'',2133,9864563467,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (219,''Barbara'',''Moore'',''Easton'',2148,9864563474,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (220,''Kevin'',''Jackson'',''Elmwood'',2141,9864563475,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (221,''Brian'',''Martin'',''Essex'',2142,9864563476,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (223,''Edward'',''Perez'',''Fayville'',2144,9864563478,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (224,''Ronald'',''Thompson'',''Charlestown'',2129,9864563479,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (225,''Timothy'',''White'',''Jamaica Plain'',2178,9864563480,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (226,''Jason'',''Harris'',''Roslindale'',2131,9864563481,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (227,''Jeffrey'',''Sanchez'',''West Roxbury'',2132,9864563482,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (228,''Ryan'',''Clark'',''Downton Boston'',2133,9864563483,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (229,''Carol'',''Ramirez'',''Allston'',2134,9864563484,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (230,''Amanda'',''Lewis'',''Brighton'',2135,9864563485,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (231,''Melissa'',''Robinson'',''Hyde Park'',2136,9864563486,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (232,''Deborah'',''Walker'',''Readville'',2137,9864563487,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (233,''Stephanie'',''Young'',''Prudential'',2199,9864563488,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (234,''Rebecca'',''Allen'',''Kenmore'',2215,9864563489,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (235,''Sharon'',''King'',''Cambridge'',2140,9864563490,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (236,''Laura'',''Wright'',''Brookline Village'',2447,9864563491,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (237,''Cynthia'',''Scott'',''East Boston'',2228,9864563492,''Absent'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (238,''Laura'',''King'',''Brighton'',2135,8764536476,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (239,''Daisy'',''Young'',''Cambridge'',2140,7465364756,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (240,''Anmol'',''Allen'',''Essex'',2142,6573544758,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (241,''sudae'',''Shawn'',''Elmwood'',2141,8474563745,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (242,''Rebecca'',''Martin'',''Essex'',2142,9864563493,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (243,''Sharon'',''Lee'',''Everett'',2143,9864563494,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (244,''Laura'',''Perez'',''Fayville'',2144,9864563495,''Present'')';
+EXECUTE IMMEDIATE 'Insert into EMPLOYEE  values (245,''Cynthia'',''Thompson'',''Charlestown'',2129,9864563496,''Present'')';
+
+ 
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='ATTENDANT';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('ATTENDANT TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE ATTENDANT( 
+
+  ID NUMBER(8) NOT NULL,  
+  TIPSCOUNT FLOAT(126) NOT NULL,
+  CONSTRAINT ATTENDANT_PK PRIMARY KEY (ID),
+  CONSTRAINT FK_EMPLOYEEATTENDANT FOREIGN KEY (ID) REFERENCES EMPLOYEE(ID ))';
+  
+  
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (117,11)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (118,15)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (119,4)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (120,8)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (101,2)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (102,2.5)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (108,3)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (112,10)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (103,6)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (105,1)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (207,7)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (208,3)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (209,10)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (210,11)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (211,12)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (212,3)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (213,33)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (214,45)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (215,33)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (216,5)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (217,8)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (218,9)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (219,10)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (220,12)';
+EXECUTE IMMEDIATE 'INSERT into ATTENDANT values  (221,15)';
+
+END IF;
+COMMIT;
+SELECT count(*) into nCount FROM user_tables where table_name ='DELIVERYATTENDANT';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DELIVERYATTENDANT TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DELIVERYATTENDANT(
+
+   ID NUMBER (8) NOT NULL,
+   TIPSCOUNT FLOAT (126) NOT NULL,
+   STATUS VARCHAR2 (50) NOT NULL,
+   CONSTRAINT DELIVERYATTENDANT_PK PRIMARY KEY (ID),
+   CONSTRAINT FK_EMPLOYEEDELIVERYATTENDANT FOREIGN KEY (ID) REFERENCES EMPLOYEE(ID))';
+
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (104,4,''Absent'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (106,18,''Absent'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (107,15,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (109,12,''Absent'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (110,2,''Absent'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (111,5,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (223,20,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (224,23,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (225,22,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (226,23,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (227,40,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (228,17,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (229,12,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (230,22,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (231,13,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (232,5,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (233,8,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (242,23,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (243,22,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (244,12,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (245,1,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (113,10,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (114,15,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (115,20,''Present'')';
+EXECUTE IMMEDIATE 'INSERT into DELIVERYATTENDANT Values (116,30,''Present'')';   
+  
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='DELIVERYAREA';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DELIVERYAREA TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DELIVERYAREA(
+
+     ZIPCODE NUMBER (5) NOT NULL,
+     DELIVERID NUMBER (4) NOT NULL,
+     CONSTRAINT DELIVERYAREA_PK PRIMARY KEY (ZIPCODE))';
+     
+     
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2267,33)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2167,34)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2120,23)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2111,24)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2115,25)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2141,13)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2142,14)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2144,15)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2129,16)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2131,18)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2132,19)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2133,20)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2134,21)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2135,22)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2136,23)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2137,24)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2199,25)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2215,26)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2140,27)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2447,28)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYAREA values (2228,29)';
+     
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='MEMBER';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('MEMBER TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE MEMBER(
+
+   ID NUMBER (8) NOT NULL,
+   DISCOUNT NUMBER (8) NOT NULL,
+   FLAVOR CHAR (255) NOT NULL,
+   BIRTHDAY DATE NOT NULL,
+   BALANCE FLOAT (126) NOT NULL,
+   EXPIRYDATE DATE NOT NULL,
+   STATUS VARCHAR2 (50) NOT NULL,
+   CONSTRAINT MEMBER_PK PRIMARY KEY (ID))';
+   
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1002,80,''Sour'',to_date(''13-NOV-91 14:01:19'',''DD-MON-RR HH24:MI:SS''),20,to_date(''11-APR-24 14:04:31'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1003,40,''Sour'',to_date(''13-NOV-86 14:01:33'',''DD-MON-RR HH24:MI:SS''),30,to_date(''26-DEC-24 14:04:49'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1005,30,''Sweet'',to_date(''26-JUL-90 14:01:49'',''DD-MON-RR HH24:MI:SS''),26,to_date(''29-MAY-25 14:05:03'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1006,20,''Sweet'',to_date(''24-DEC-69 14:02:06'',''DD-MON-RR HH24:MI:SS''),19,to_date(''27-JAN-22 14:05:20'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1007,25,''Spicy'',to_date(''17-JUN-63 14:02:31'',''DD-MON-RR HH24:MI:SS''),10,to_date(''04-JUN-24 14:05:37'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1008,25,''Spicy'',to_date(''14-JAN-98 14:03:29'',''DD-MON-RR HH24:MI:SS''),50,to_date(''15-NOV-24 14:05:46'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1054,20,''Sweet'',to_date(''02-FEB-98 00:00:00'',''DD-MON-RR HH24:MI:SS''),100,to_date(''02-FEB-26 00:00:00'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1001,50,''Spicy'',to_date(''05-NOV-98 00:24:23'',''DD-MON-RR HH24:MI:SS''),30,to_date(''04-NOV-22 00:24:34'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1009,5,''Sweet'',to_date(''14-DEC-99 19:19:21'',''DD-MON-RR HH24:MI:SS''),40,to_date(''03-MAY-22 19:14:34'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1010,5,''Sweet'',to_date(''13-JUN-95 19:19:37'',''DD-MON-RR HH24:MI:SS''),5,to_date(''07-DEC-22 19:14:44'',''DD-MON-RR HH24:MI:SS''),''Inactive'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1038,5,''Sweet'',to_date(''05-DEC-96 19:19:56'',''DD-MON-RR HH24:MI:SS''),44,to_date(''07-DEC-22 19:14:50'',''DD-MON-RR HH24:MI:SS''),''Inactive'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1012,10,''Sweet'',to_date(''05-DEC-91 19:20:25'',''DD-MON-RR HH24:MI:SS''),60,to_date(''07-JUN-23 19:14:55'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1013,10,''Sweet'',to_date(''02-MAY-96 19:20:37'',''DD-MON-RR HH24:MI:SS''),45,to_date(''07-JUN-23 19:15:02'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1014,10,''Sweet'',to_date(''17-JAN-96 19:21:05'',''DD-MON-RR HH24:MI:SS''),66,to_date(''08-SEP-23 19:15:11'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1015,10,''Sweet'',to_date(''02-JAN-98 19:21:20'',''DD-MON-RR HH24:MI:SS''),33,to_date(''11-JUL-23 19:15:21'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1016,10,''Sour'',to_date(''11-MAY-89 19:21:50'',''DD-MON-RR HH24:MI:SS''),67,to_date(''17-DEC-22 19:15:28'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1017,10,''Sour'',to_date(''10-DEC-87 19:22:08'',''DD-MON-RR HH24:MI:SS''),88,to_date(''14-JAN-22 19:15:41'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1018,15,''Sour'',to_date(''13-JAN-88 19:22:22'',''DD-MON-RR HH24:MI:SS''),23,to_date(''11-FEB-22 19:15:52'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1019,15,''Sour'',to_date(''08-MAY-85 19:22:39'',''DD-MON-RR HH24:MI:SS''),45,to_date(''11-MAR-22 19:16:01'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1020,15,''Sour'',to_date(''05-DEC-84 19:22:52'',''DD-MON-RR HH24:MI:SS''),87,to_date(''14-JUN-23 19:16:10'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1021,15,''Spicy'',to_date(''04-JUL-88 19:23:05'',''DD-MON-RR HH24:MI:SS''),77,to_date(''21-JUN-23 19:16:17'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1039,15,''Spicy'',to_date(''07-MAY-85 19:23:19'',''DD-MON-RR HH24:MI:SS''),87,to_date(''21-AUG-23 19:16:29'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1023,20,''Spicy'',to_date(''06-DEC-84 19:23:33'',''DD-MON-RR HH24:MI:SS''),33,to_date(''06-DEC-24 19:16:41'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1024,20,''Spicy'',to_date(''19-JUL-90 19:23:47'',''DD-MON-RR HH24:MI:SS''),22,to_date(''11-JUN-24 19:16:49'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1025,20,''Spicy'',to_date(''21-DEC-88 19:24:08'',''DD-MON-RR HH24:MI:SS''),34,to_date(''19-AUG-24 19:17:05'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1026,20,''Spicy'',to_date(''20-MAY-86 19:24:20'',''DD-MON-RR HH24:MI:SS''),55,to_date(''05-DEC-24 19:17:24'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1027,20,''Spicy'',to_date(''19-JAN-83 19:24:34'',''DD-MON-RR HH24:MI:SS''),65,to_date(''24-OCT-22 19:17:32'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1028,20,''Sweet'',to_date(''11-MAR-87 19:24:55'',''DD-MON-RR HH24:MI:SS''),55,to_date(''01-JUN-23 19:17:41'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1029,20,''Sweet'',to_date(''11-DEC-91 19:25:16'',''DD-MON-RR HH24:MI:SS''),77,to_date(''10-JUN-24 19:17:48'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1030,25,''Sweet'',to_date(''02-DEC-81 19:25:31'',''DD-MON-RR HH24:MI:SS''),22,to_date(''08-FEB-23 19:17:55'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1011,15,''Spicy'',to_date(''23-APR-98 19:04:19'',''DD-MON-RR HH24:MI:SS''),20,to_date(''10-NOV-22 19:06:17'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1022,10,''Sour'',to_date(''21-OCT-99 19:04:36'',''DD-MON-RR HH24:MI:SS''),18,to_date(''28-NOV-21 19:06:25'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1033,10,''Sour'',to_date(''26-DEC-95 19:05:09'',''DD-MON-RR HH24:MI:SS''),16,to_date(''10-JUN-22 19:08:47'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1044,5,''Sour'',to_date(''12-JAN-99 19:05:41'',''DD-MON-RR HH24:MI:SS''),15,to_date(''10-NOV-23 19:09:24'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1031,25,''Sweet'',to_date(''20-AUG-97 19:25:49'',''DD-MON-RR HH24:MI:SS''),34,to_date(''10-JUL-23 19:18:05'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1032,25,''Sour'',to_date(''19-MAR-98 19:26:18'',''DD-MON-RR HH24:MI:SS''),23,to_date(''07-DEC-23 19:18:12'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1040,25,''Sour'',to_date(''05-JUN-97 19:26:42'',''DD-MON-RR HH24:MI:SS''),66,to_date(''07-DEC-23 19:18:19'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1034,25,''Sour'',to_date(''11-MAY-95 19:26:59'',''DD-MON-RR HH24:MI:SS''),44,to_date(''10-AUG-23 19:18:33'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1035,30,''Spicy'',to_date(''09-JUN-89 19:27:14'',''DD-MON-RR HH24:MI:SS''),22,to_date(''13-JUN-22 19:18:47'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1036,30,''Spicy'',to_date(''15-JUN-94 19:27:29'',''DD-MON-RR HH24:MI:SS''),77,to_date(''19-JUN-23 19:18:56'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+EXECUTE IMMEDIATE 'Insert into MEMBER values (1037,30,''Spicy'',to_date(''27-AUG-97 19:27:42'',''DD-MON-RR HH24:MI:SS''),100,to_date(''05-JUN-23 19:19:04'',''DD-MON-RR HH24:MI:SS''),''Active'')';
+
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='CUSTOMER';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('CUSTOMER TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE CUSTOMER (
+
+    ID NUMBER (8) NOT NULL,
+    MEMBERID NUMBER (8) NULL,
+    FIRSTNAME CHAR (255) NOT NULL,
+    LASTNAME CHAR (255) NOT NULL,
+    PHONENUM NUMBER (10) NOT NULL,
+    ADDRESS CHAR (255) NOT NULL,
+    ZIPCODE NUMBER (5) NOT NULL,
+    CONSTRAINT CUSTOMER_PK PRIMARY KEY (ID),
+    CONSTRAINT FK_MEMBERCUSTOMER FOREIGN KEY (MEMBERID) REFERENCES MEMBER(ID))';
+    
+    
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2021,1018,''Devona'',''Brown'',7462987565,''Cohasset'',2124)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2022,1019,''Diamond'',''Miller'',7462987566,''Concord'',2125)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2023,1020,''Divinity'',''Davis'',7462987567,''Cumberland'',2126)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2024,1021,''Duff'',''Rodriguez'',7462987568,''Danvers'',2127)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2025,1039,''Dustin'',''Taylor'',7462987569,''Dedham'',2128)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2026,null,''Dusty'',''Moore'',7462987570,''Devens'',2129)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2001,1002,''Olivia'',''Brown'',8657652345,''Roxbury'',2130)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2002,1003,''Harry'',''Miller'',8763452345,''Hungtinton'',2120)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2003,1005,''Sophia'',''Davis'',8456782345,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2004,1006,''Alfie'',''Rodriguez'',8456735934,''Mission Main'',2456)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2005,1007,''Freddie'',''Taylor'',8345623986,''Mass Ave'',2115)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2006,1008,''Mia'',''Moore'',8763652876,''Harvard Square'',2138)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2027,null,''Ellen'',''Miller'',7462987571,''Dorchester'',2130)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2059,null,''Bishop'',''Perez'',7462987603,''Somerville'',2143)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2060,null,''Blaan'',''Harris'',7462987604,''Fenway'',2115)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2061,1023,''Blackburn'',''Anderson'',7462987605,''Tremont Street'',2111)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2062,1024,''Blade'',''Martin'',7462987606,''Hungtinton'',2120)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2063,1025,''Blaine'',''Maben'',7462987607,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2000,1001,''Rayna'',''Miller'',9485739304,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2011,1009,''Daisy'',''Scott'',7654569876,''Tremont Street'',2111)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2013,1010,''Melody'',''Nelson'',8764563456,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2015,1038,''Joe'',''Mitchell'',8456787467,''Cambridge'',2139)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2014,1012,''Bruce'',''Morgan'',9874567546,''Harvard Square'',2138)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2016,1013,''Julie'',''Mark'',8764567867,''Fenway'',2115)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2007,1014,''Ava'',''Robert'',8763546789,''Wilmington'',1887)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2008,1015,''William'',''Walker'',7648673547,''Charles St'',2116)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2009,1016,''Evelyn'',''Evans'',3654858656,''Queensberry S'',2215)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2010,1017,''Mia'',''Wright'',7462987564,''Brookline'',2446)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2064,1026,''Blaze'',''Mabile'',7462987608,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2077,1035,''Byron'',''Perez'',7462987621,''Charlestown'',2129)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2078,1036,''Cabal'',''Thompson'',7462987622,''FayVille'',2144)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2079,1037,''Cage'',''White'',7462987623,''Essex'',2142)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2080,null,''Cahir'',''Harris'',7462987624,''Elmwood'',2141)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2081,null,''Cavalon'',''Sanchez'',7462987625,''Fenway'',2115)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2082,null,''Cedar'',''Clark'',7462987626,''Tremont Street'',2111)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2083,null,''Chatillon'',''Ramirez'',7462987627,''Hungtinton'',2120)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2065,1027,''Bramwell'',''Smith'',7462987609,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2066,1028,''Brant'',''Johnson'',7462987610,''Roslindale'',2131)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2067,1029,''Brawley'',''Williams'',7462987611,''Charlestown'',2129)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2068,1030,''Breri'',''Brown'',7462987612,''FayVille'',2144)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2069,1011,''Briar'',''Jones'',7462987613,''Essex'',2142)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2070,1022,''Brighton'',''Garcia'',7462987614,''Elmwood'',2141)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2071,1033,''Broderick'',''Miller'',7462987615,''Fenway'',2115)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2072,1044,''Bronson'',''Davis'',7462987616,''Tremont Street'',2111)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2073,1031,''Bryce'',''Rodriguez'',7462987617,''Hungtinton'',2120)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2074,1032,''Burdette'',''Martinez'',7462987618,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2075,1040,''Burle'',''Hernandez'',7462987619,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2076,1034,''Byrd'',''Lee'',7462987620,''Roslindale'',2131)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2028,null,''Eppie'',''Scott'',7462987572,''Dorchester Center'',2131)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2029,null,''Evelyn'',''Nelson'',7462987573,''Dover'',2132)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2030,null,''Everilda'',''Mitchell'',7462987574,''Dracut'',2133)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2031,null,''Falynn'',''Morgan'',7462987575,''Dunstable'',2134)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2032,null,''Fanny'',''Mark'',7462987576,''Duxbury'',2135)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2033,null,''Faren'',''Robert'',7462987577,''East Boston'',2136)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2034,null,''Freedom'',''Walker'',7462987578,''East Bridgewater'',2137)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2035,null,''Gala'',''Evans'',7462987579,''East Walpole'',2138)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2036,null,''Galen'',''Wright'',7462987580,''East Weymouth'',2139)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2037,null,''Gardenia'',''Taylor'',7462987581,''Easton'',2140)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2038,null,''Aleyn'',''Moore'',7462987582,''Elmwood'',2141)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2039,null,''Alford'',''Jackson'',7462987583,''Essex'',2142)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2040,null,''Amherst'',''Martin'',7462987584,''Everett'',2143)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2041,null,''Angel'',''Lee'',7462987585,''Fayville'',2144)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2042,null,''Anson'',''Perez'',7462987586,''Charlestown'',2129)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2043,null,''Archibald'',''Thompson'',7462987587,''Jamaica Plain'',2130)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2044,null,''Aries'',''White'',7462987588,''Roslindale'',2131)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2045,null,''Arwen'',''Harris'',7462987589,''West Roxbury'',2132)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2046,null,''Astin'',''Sanchez'',7462987590,''Downtown Boston'',2133)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2047,null,''Atley'',''Clark'',7462987591,''Allston'',2134)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2048,null,''Atwell'',''Ramirez'',7462987592,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2049,null,''Audie'',''Lewis'',7462987593,''Harvard Square'',2138)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2050,null,''Avery'',''Robinson'',7462987594,''Roxbury'',2120)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2051,null,''Ayers'',''Walker'',7462987595,''Mission Hill'',1234)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2052,null,''Baker'',''Young'',7462987596,''Brigham Circle'',2345)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2053,null,''Balder'',''Allen'',7462987597,''Longwood'',2267)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2054,null,''Ballentine'',''King'',7462987598,''Bolysten Street'',2786)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2055,null,''Bardalph'',''Wright'',7462987599,''Mission Main'',2456)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2056,null,''Barker'',''Scott'',7462987600,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2057,null,''Barric'',''Martin'',7462987601,''Downtown'',2110)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2084,null,''Churchill'',''Lewis'',7462987628,''Cambridge'',2167)';
+EXECUTE IMMEDIATE 'Insert into CUSTOMER values  (2085,null,''Clachas'',''Robinson'',7462987629,''Longwood'',2267)';
+
+      
+END IF;
+COMMIT;
+SELECT count(*) into nCount FROM user_tables where table_name ='INVENTORY';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('INVENTORY TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE ' CREATE TABLE INVENTORY (
+
+  ID NUMBER (4) NOT NULL,
+  NAME CHAR (255) NOT NULL,
+  QUANT NUMBER (4) NOT NULL,
+  STATUS VARCHAR2 (50) NOT NULL,
+  CONSTRAINT INVENTORY_PK PRIMARY KEY (ID))';
+  
+  
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (11,''Butter'',1000,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (12,''VanillaIcecream'',5050,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (13,''ChocolateIcecream'',60,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (14,''StrawberryIcecream'',70,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (15,''Cookies n Cream Icecream'',40,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (16,''Fish'',90,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (17,''Paneer'',100,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (18,''Curd'',70,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (19,''Chillies'',60,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (20,''Herbs'',45,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (21,''Cheese'',0,''Out of Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (22,''Sauce'',0,''Out of Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (23,''Eggs'',100,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (24,''Sugar'',40,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (25,''Garlic'',60,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (1,''Rice'',80,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (2,''Chicken'',70,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (3,''Mutton'',100,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (4,''Flour'',200,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (5,''Oil'',80,''In stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (6,''Spices'',60,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (7,''Onions'',50,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (8,''Potatoes'',80,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (9,''Tomatoes'',40,''In Stock'')';
+EXECUTE IMMEDIATE 'Insert into INVENTORY values (10,''Salt'',80,''In Stock'')';
+
+  
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='MENU';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('MENU TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE MENU(
+
+   ID NUMBER (4) NOT NULL,
+   PRICE FLOAT (126) NOT NULL,
+   NAME VARCHAR2 (30) NOT NULL,
+   FLAVOR VARCHAR2 (30) NOT NULL,
+   STATUS VARCHAR2 (50) NOT NULL,
+   CONSTRAINT MENU_PK PRIMARY KEY (ID))';
+   
+EXECUTE IMMEDIATE 'Insert into MENU  values (1215,40,''Fried Rice'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1216,50,''Chicken 65'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1207,30,''Rice'',''Normal'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1208,60,''Teriyaki Chicken'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1217,60,''Butter Chicken'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1210,10,''Butter Naan'',''Normal'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1211,40,''Matar Paneer'',''Bland'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1212,80,''Mutton Curry'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1213,55,''Tandoori Chicken'',''Normal'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1214,70,''Mutton Vindaloo Curry'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1218,55,''Kadai Chicken'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1219,90,''Nihari Mutton'',''smokey'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1220,89,''Parsi Fish Curry'',''smokey'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1221,45,''Veg Biryani'',''smokey'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1222,50,''Chicken Biryani'',''smokey'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1223,20,''Blue moon Icecream'',''Sweet'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1224,20,''Vanilla'',''Sweet'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1225,20,''Chocolate'',''Sweet'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1226,20,''Cookies N Cream'',''Sweet'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1227,90,''Strawberry'',''Sweet'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1228,50,''Momos'',''Normal'',''Inactive'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1229,10,''Tandoori Naan'',''Normal'',''Inactive'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1230,40,''Chicken Tikka Masala'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1231,80,''Mutton Roganjosh'',''Spicy'',''Active'')';
+EXECUTE IMMEDIATE 'Insert into MENU  values (1232,60,''Mutton Biryani'',''Smokey'',''Active'')';
+
+
+
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='PAYMENT';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('PAYMENT TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE PAYMENT(
+
+   ID NUMBER (10) NOT NULL,
+   DATETIME DATE NOT NULL,
+   MAINVALUE FLOAT (126) NOT NULL,
+   TIPSVALUE FLOAT (126) NOT NULL,
+   CONSTRAINT PAYMENT_PK PRIMARY KEY (ID))';
+   
+   
+
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2400,to_date(''27-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),120,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2401,to_date(''10-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),111,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2402,to_date(''01-NOV-21 09:00:00'',''DD-MON-RR HH24:MI:SS''),102,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2403,to_date(''02-NOV-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),103,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2404,to_date(''03-NOV-21 11:00:00'',''DD-MON-RR HH24:MI:SS''),115,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2405,to_date(''04-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),117,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2406,to_date(''04-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),109,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2407,to_date(''05-NOV-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),108,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2408,to_date(''06-NOV-21 17:00:00'',''DD-MON-RR HH24:MI:SS''),134,24)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2409,to_date(''11-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),55,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2410,to_date(''11-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),70,19)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2411,to_date(''12-OCT-21 17:00:00'',''DD-MON-RR HH24:MI:SS''),70,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2412,to_date(''13-OCT-21 21:00:00'',''DD-MON-RR HH24:MI:SS''),70,24)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2413,to_date(''14-OCT-21 22:00:00'',''DD-MON-RR HH24:MI:SS''),240,25)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2414,to_date(''14-OCT-21 23:00:00'',''DD-MON-RR HH24:MI:SS''),132,28)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2415,to_date(''15-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),144,5)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2416,to_date(''16-OCT-21 15:00:00'',''DD-MON-RR HH24:MI:SS''),132,10)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2417,to_date(''17-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),98,11)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2418,to_date(''18-OCT-21 15:00:00'',''DD-MON-RR HH24:MI:SS''),89,11)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2419,to_date(''19-OCT-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),156,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2420,to_date(''20-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),112,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2421,to_date(''04-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),106,5)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2422,to_date(''05-NOV-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),105,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2423,to_date(''06-NOV-21 16:53:23'',''DD-MON-RR HH24:MI:SS''),156,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2424,to_date(''12-NOV-21 16:53:23'',''DD-MON-RR HH24:MI:SS''),104,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2425,to_date(''14-NOV-21 17:53:34'',''DD-MON-RR HH24:MI:SS''),103,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2426,to_date(''14-NOV-21 18:54:06'',''DD-MON-RR HH24:MI:SS''),155,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2427,to_date(''15-NOV-21 16:54:17'',''DD-MON-RR HH24:MI:SS''),134,8)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2428,to_date(''15-NOV-21 17:55:06'',''DD-MON-RR HH24:MI:SS''),122,8)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2429,to_date(''16-NOV-21 18:55:14'',''DD-MON-RR HH24:MI:SS''),104,7)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2430,to_date(''16-NOV-21 17:00:19'',''DD-MON-RR HH24:MI:SS''),104,7)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2431,to_date(''17-NOV-21 12:55:24'',''DD-MON-RR HH24:MI:SS''),112,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2432,to_date(''17-NOV-21 17:56:43'',''DD-MON-RR HH24:MI:SS''),100,23)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2433,to_date(''07-NOV-21 17:00:00'',''DD-MON-RR HH24:MI:SS''),97,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2434,to_date(''08-NOV-21 19:00:00'',''DD-MON-RR HH24:MI:SS''),88,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2435,to_date(''12-NOV-21 09:00:00'',''DD-MON-RR HH24:MI:SS''),78,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2436,to_date(''12-NOV-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),111,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2437,to_date(''12-NOV-21 11:00:00'',''DD-MON-RR HH24:MI:SS''),70,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2438,to_date(''18-NOV-21 19:35:51'',''DD-MON-RR HH24:MI:SS''),150,4)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2439,to_date(''19-NOV-21 19:35:58'',''DD-MON-RR HH24:MI:SS''),160,6)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2440,to_date(''19-DEC-21 20:36:06'',''DD-MON-RR HH24:MI:SS''),111,10)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2441,to_date(''19-NOV-21 21:37:14'',''DD-MON-RR HH24:MI:SS''),123,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2442,to_date(''19-NOV-21 21:56:25'',''DD-MON-RR HH24:MI:SS''),123,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2443,to_date(''20-NOV-21 23:42:45'',''DD-MON-RR HH24:MI:SS''),120,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2444,to_date(''21-NOV-21 20:42:56'',''DD-MON-RR HH24:MI:SS''),130,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2445,to_date(''03-NOV-21 12:43:05'',''DD-MON-RR HH24:MI:SS''),140,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2446,to_date(''04-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),41,5)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2447,to_date(''04-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),42,6)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2448,to_date(''04-NOV-21 12:43:05'',''DD-MON-RR HH24:MI:SS''),43,7)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2449,to_date(''04-NOV-21 12:43:05'',''DD-MON-RR HH24:MI:SS''),44,8)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2450,to_date(''04-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),45,9)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2451,to_date(''04-NOV-21 11:43:05'',''DD-MON-RR HH24:MI:SS''),46,10)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2452,to_date(''05-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),47,11)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2453,to_date(''05-NOV-21 14:45:05'',''DD-MON-RR HH24:MI:SS''),48,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2454,to_date(''05-NOV-21 15:43:05'',''DD-MON-RR HH24:MI:SS''),49,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2455,to_date(''05-NOV-21 16:43:05'',''DD-MON-RR HH24:MI:SS''),50,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2456,to_date(''06-NOV-21 13:13:05'',''DD-MON-RR HH24:MI:SS''),51,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2457,to_date(''06-NOV-21 13:23:05'',''DD-MON-RR HH24:MI:SS''),52,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2458,to_date(''06-NOV-21 13:33:05'',''DD-MON-RR HH24:MI:SS''),53,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2459,to_date(''06-NOV-21 12:43:05'',''DD-MON-RR HH24:MI:SS''),54,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2460,to_date(''06-NOV-21 13:53:05'',''DD-MON-RR HH24:MI:SS''),55,4)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2461,to_date(''07-NOV-21 12:53:05'',''DD-MON-RR HH24:MI:SS''),56,5)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2462,to_date(''07-NOV-21 11:13:05'',''DD-MON-RR HH24:MI:SS''),57,6)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2463,to_date(''07-NOV-21 21:23:05'',''DD-MON-RR HH24:MI:SS''),58,7)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2464,to_date(''07-NOV-21 20:33:05'',''DD-MON-RR HH24:MI:SS''),60,4)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2465,to_date(''08-NOV-21 17:33:05'',''DD-MON-RR HH24:MI:SS''),60,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2466,to_date(''08-NOV-21 18:43:05'',''DD-MON-RR HH24:MI:SS''),61,4)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2467,to_date(''08-NOV-21 19:23:05'',''DD-MON-RR HH24:MI:SS''),62,5)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2468,to_date(''09-NOV-21 11:13:05'',''DD-MON-RR HH24:MI:SS''),63,6)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2469,to_date(''09-NOV-21 11:13:05'',''DD-MON-RR HH24:MI:SS''),64,7)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2470,to_date(''09-NOV-21 12:44:05'',''DD-MON-RR HH24:MI:SS''),65,4)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2471,to_date(''10-NOV-21 13:55:05'',''DD-MON-RR HH24:MI:SS''),66,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2472,to_date(''09-NOV-21 12:13:05'',''DD-MON-RR HH24:MI:SS''),67,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2473,to_date(''09-NOV-21 13:13:05'',''DD-MON-RR HH24:MI:SS''),68,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2474,to_date(''09-NOV-21 14:44:05'',''DD-MON-RR HH24:MI:SS''),53,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2475,to_date(''10-NOV-21 15:55:05'',''DD-MON-RR HH24:MI:SS''),54,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2345,to_date(''04-OCT-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),20,23)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2355,to_date(''02-OCT-21 10:25:00'',''DD-MON-RR HH24:MI:SS''),132,22)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2356,to_date(''02-OCT-21 10:40:00'',''DD-MON-RR HH24:MI:SS''),133,23)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2323,to_date(''02-OCT-21 11:10:00'',''DD-MON-RR HH24:MI:SS''),130,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2324,to_date(''02-OCT-21 12:34:00'',''DD-MON-RR HH24:MI:SS''),30,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2325,to_date(''02-OCT-21 13:09:00'',''DD-MON-RR HH24:MI:SS''),60,22)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2326,to_date(''02-OCT-21 14:30:00'',''DD-MON-RR HH24:MI:SS''),60,23)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2327,to_date(''03-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),104,24)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2328,to_date(''03-OCT-21 11:50:00'',''DD-MON-RR HH24:MI:SS''),105,25)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2329,to_date(''02-OCT-21 12:33:00'',''DD-MON-RR HH24:MI:SS''),10,26)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2330,to_date(''02-OCT-21 15:45:00'',''DD-MON-RR HH24:MI:SS''),40,27)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2331,to_date(''03-OCT-21 15:55:00'',''DD-MON-RR HH24:MI:SS''),80,28)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2332,to_date(''04-OCT-21 10:50:00'',''DD-MON-RR HH24:MI:SS''),109,29)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2333,to_date(''04-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),110,30)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2334,to_date(''05-OCT-21 14:50:00'',''DD-MON-RR HH24:MI:SS''),111,12)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2335,to_date(''03-OCT-21 17:44:00'',''DD-MON-RR HH24:MI:SS''),55,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2336,to_date(''03-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),70,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2337,to_date(''04-OCT-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),55,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2338,to_date(''06-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),115,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2339,to_date(''04-OCT-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),90,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2340,to_date(''07-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),117,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2341,to_date(''04-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),89,19)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2342,to_date(''06-OCT-21 15:00:00'',''DD-MON-RR HH24:MI:SS''),45,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2343,to_date(''07-OCT-21 17:50:00'',''DD-MON-RR HH24:MI:SS''),120,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2344,to_date(''06-OCT-21 19:00:00'',''DD-MON-RR HH24:MI:SS''),50,22)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2346,to_date(''04-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),20,13)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2347,to_date(''05-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),20,14)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2348,to_date(''08-OCT-21 17:10:00'',''DD-MON-RR HH24:MI:SS''),125,15)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2349,to_date(''09-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),126,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2350,to_date(''10-OCT-21 11:50:00'',''DD-MON-RR HH24:MI:SS''),127,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2351,to_date(''05-OCT-21 20:00:00'',''DD-MON-RR HH24:MI:SS''),230,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2352,to_date(''05-OCT-21 22:00:00'',''DD-MON-RR HH24:MI:SS''),60,19)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2353,to_date(''07-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),40,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2354,to_date(''11-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),131,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2357,to_date(''12-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),134,24)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2358,to_date(''07-OCT-21 19:00:00'',''DD-MON-RR HH24:MI:SS''),80,25)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2359,to_date(''07-OCT-21 19:00:00'',''DD-MON-RR HH24:MI:SS''),60,16)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2360,to_date(''08-OCT-21 22:00:00'',''DD-MON-RR HH24:MI:SS''),40,17)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2361,to_date(''12-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),138,18)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2362,to_date(''13-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),139,19)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2363,to_date(''23-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),140,20)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2364,to_date(''08-OCT-21 23:00:00'',''DD-MON-RR HH24:MI:SS''),40,21)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2365,to_date(''08-OCT-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),50,22)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2366,to_date(''08-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),10,23)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2367,to_date(''23-OCT-21 17:50:00'',''DD-MON-RR HH24:MI:SS''),144,24)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2368,to_date(''24-OCT-21 17:50:00'',''DD-MON-RR HH24:MI:SS''),145,25)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2369,to_date(''09-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),40,26)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2370,to_date(''10-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),80,27)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2371,to_date(''25-OCT-21 18:50:00'',''DD-MON-RR HH24:MI:SS''),148,28)';
+EXECUTE IMMEDIATE 'Insert into PAYMENT values (2372,to_date(''26-OCT-21 20:50:00'',''DD-MON-RR HH24:MI:SS''),149,5)';
+
+
+  
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='DININGTABLE';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DININGTABLE TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DININGTABLE (
+
+   ID NUMBER (4) NOT NULL,
+   ATTENDANTID NUMBER (8) NULL,
+   STATUS VARCHAR2 (50) NOT NULL,
+   CONSTRAINT DININGTABLE_PK PRIMARY KEY (ID),
+   CONSTRAINT FK_ATTENDANTDININGTABLE FOREIGN KEY (ATTENDANTID) REFERENCES ATTENDANT(ID))';
+   
+   
+   
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(667,101,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(668,102,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(679,119,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(800,108,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(801,112,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(802,103,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(803,105,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(804,108,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(805,112,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(806,118,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(807,119,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(808,120,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(809,207,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(810,208,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(811,209,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(812,210,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(670,103,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(680,105,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(681,108,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(682,112,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(683,118,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(684,119,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(685,120,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(686,207,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(687,208,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(688,209,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(689,210,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(690,211,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(691,212,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(692,213,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(693,214,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(694,215,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(695,216,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(696,217,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(697,218,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(698,219,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(699,102,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(700,101,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(701,219,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(702,212,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(703,108,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(704,108,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(705,215,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(706,216,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(707,217,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(708,218,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(709,219,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(710,102,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(711,101,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(712,219,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(713,212,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(714,108,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(715,108,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(716,207,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(448,207,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(556,108,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(666,207,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(333,108,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(765,207,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(879,102,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(673,101,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(674,102,''available'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(675,118,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(676,119,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(677,108,''occupied'')';
+EXECUTE IMMEDIATE 'Insert  into DININGTABLE values(678,112,''available'')';
+
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='DINEINORDER';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DINEINORDER TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DINEINORDER (
+
+   ID NUMBER (10)NOT NULL,
+   TABLEID NUMBER (4) NULL,
+   CUSTOMERID NUMBER (8) NOT NULL,
+   STATUS VARCHAR2 (50) NOT NULL,
+   DATETIME DATE NOT NULL,
+   PAYMENTID NUMBER,
+   CONSTRAINT DINEINORDER_PK PRIMARY KEY (ID),
+   CONSTRAINT FK_DININGTABLE_DINEINORDER FOREIGN KEY (TABLEID) REFERENCES DININGTABLE(ID),
+   CONSTRAINT FK_CUSTOMER_DINEINORDER FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMER(ID),
+   CONSTRAINT FK_PAYMENT_DINEINORDER FOREIGN KEY (PAYMENTID) REFERENCES PAYMENT(ID))';
+   
+   
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (50,687,2013,''accepted'',to_date(''05-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),2347)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (51,688,2015,''accepted'',to_date(''05-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),2351)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (52,689,2014,''accepted'',to_date(''05-OCT-21 20:00:00'',''DD-MON-RR HH24:MI:SS''),2352)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (53,690,2016,''accepted'',to_date(''07-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),2353)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (54,691,2007,''accepted'',to_date(''07-OCT-21 17:00:00'',''DD-MON-RR HH24:MI:SS''),2358)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (55,692,2008,''accepted'',to_date(''07-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),2359)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (56,693,2009,''accepted'',to_date(''08-OCT-21 20:00:00'',''DD-MON-RR HH24:MI:SS''),2360)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (57,694,2010,''accepted'',to_date(''08-OCT-21 21:00:00'',''DD-MON-RR HH24:MI:SS''),2364)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (58,695,2035,''accepted'',to_date(''08-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2365)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (59,696,2036,''accepted'',to_date(''08-OCT-21 11:00:00'',''DD-MON-RR HH24:MI:SS''),2366)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (60,697,2037,''accepted'',to_date(''09-OCT-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),2369)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (61,698,2038,''accepted'',to_date(''10-OCT-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),2370)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (62,699,2039,''accepted'',to_date(''11-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),2409)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (63,700,2040,''accepted'',to_date(''11-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),2410)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (64,701,2041,''accepted'',to_date(''12-OCT-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),2411)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (65,702,2042,''accepted'',to_date(''13-OCT-21 20:00:00'',''DD-MON-RR HH24:MI:SS''),2412)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (66,703,2043,''accepted'',to_date(''14-OCT-21 21:00:00'',''DD-MON-RR HH24:MI:SS''),2413)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (67,704,2044,''accepted'',to_date(''14-OCT-21 22:00:00'',''DD-MON-RR HH24:MI:SS''),2414)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (68,705,2045,''accepted'',to_date(''15-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2415)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (69,706,2046,''accepted'',to_date(''16-OCT-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),2416)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (70,707,2047,''accepted'',to_date(''17-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2417)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (71,708,2048,''accepted'',to_date(''18-OCT-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),2418)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (72,709,2049,''accepted'',to_date(''19-OCT-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),2419)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (73,710,2050,''accepted'',to_date(''20-OCT-21 15:00:00'',''DD-MON-RR HH24:MI:SS''),2420)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (74,711,2051,''accepted'',to_date(''04-NOV-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2421)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (75,712,2052,''accepted'',to_date(''05-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),2422)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (76,713,2053,''accepted'',to_date(''06-NOV-21 15:53:23'',''DD-MON-RR HH24:MI:SS''),2423)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (77,714,2054,''accepted'',to_date(''12-NOV-21 15:53:23'',''DD-MON-RR HH24:MI:SS''),2424)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (78,715,2055,''accepted'',to_date(''14-NOV-21 15:53:34'',''DD-MON-RR HH24:MI:SS''),2425)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (79,716,2056,''accepted'',to_date(''14-NOV-21 17:54:06'',''DD-MON-RR HH24:MI:SS''),2426)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (80,679,2021,''accepted'',to_date(''15-NOV-21 15:54:17'',''DD-MON-RR HH24:MI:SS''),2427)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (81,800,2022,''accepted'',to_date(''15-NOV-21 15:55:06'',''DD-MON-RR HH24:MI:SS''),2428)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (82,801,2023,''accepted'',to_date(''16-NOV-21 15:55:14'',''DD-MON-RR HH24:MI:SS''),2429)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (83,802,2024,''accepted'',to_date(''16-NOV-21 15:00:19'',''DD-MON-RR HH24:MI:SS''),2430)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (84,803,2025,''accepted'',to_date(''17-NOV-21 10:55:24'',''DD-MON-RR HH24:MI:SS''),2431)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (85,804,2026,''accepted'',to_date(''17-NOV-21 15:56:43'',''DD-MON-RR HH24:MI:SS''),2432)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (86,805,2027,''accepted'',to_date(''18-NOV-21 18:35:51'',''DD-MON-RR HH24:MI:SS''),2438)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (87,806,2028,''accepted'',to_date(''19-NOV-21 18:35:58'',''DD-MON-RR HH24:MI:SS''),2439)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (88,807,2029,''accepted'',to_date(''19-DEC-21 19:36:06'',''DD-MON-RR HH24:MI:SS''),2440)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (89,808,2030,''accepted'',to_date(''19-NOV-21 19:37:14'',''DD-MON-RR HH24:MI:SS''),2441)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (90,809,2031,''accepted'',to_date(''19-NOV-21 18:56:25'',''DD-MON-RR HH24:MI:SS''),2442)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (91,810,2032,''accepted'',to_date(''20-NOV-21 20:42:45'',''DD-MON-RR HH24:MI:SS''),2443)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (92,811,2033,''accepted'',to_date(''21-NOV-21 19:42:56'',''DD-MON-RR HH24:MI:SS''),2444)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (93,812,2034,''accepted'',to_date(''22-NOV-21 20:43:05'',''DD-MON-RR HH24:MI:SS''),2445)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (35,670,2001,''accepted'',to_date(''03-OCT-21 15:44:00'',''DD-MON-RR HH24:MI:SS''),2335)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (36,680,2002,''accepted'',to_date(''03-OCT-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),2336)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (44,681,2003,''accepted'',to_date(''04-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2337)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (45,682,2004,''accepted'',to_date(''04-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2339)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (46,683,2005,''accepted'',to_date(''04-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2341)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (47,684,2006,''accepted'',to_date(''06-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2342)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (48,685,2000,''accepted'',to_date(''06-OCT-21 15:00:00'',''DD-MON-RR HH24:MI:SS''),2344)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (49,686,2011,''accepted'',to_date(''04-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2346)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (34,667,2001,''accepted'',to_date(''04-OCT-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),2345)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (39,673,2008,''accepted'',to_date(''02-OCT-21 10:10:00'',''DD-MON-RR HH24:MI:SS''),2323)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (40,675,2009,''accepted'',to_date(''02-OCT-21 10:34:00'',''DD-MON-RR HH24:MI:SS''),2324)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (37,674,2004,''accepted'',to_date(''02-OCT-21 11:09:00'',''DD-MON-RR HH24:MI:SS''),2325)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (38,668,2007,''accepted'',to_date(''02-OCT-21 12:30:00'',''DD-MON-RR HH24:MI:SS''),2326)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (42,677,2011,''accepted'',to_date(''02-OCT-21 12:33:00'',''DD-MON-RR HH24:MI:SS''),2329)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (43,678,2016,''accepted'',to_date(''02-OCT-21 13:45:00'',''DD-MON-RR HH24:MI:SS''),2330)';
+EXECUTE IMMEDIATE 'Insert into DINEINORDER values (41,676,2010,''aceepted'',to_date(''03-OCT-21 14:55:00'',''DD-MON-RR HH24:MI:SS''),2331)';
+
+
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='DISHRECIPE';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DISHRECIPE TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DISHRECIPE (
+
+   DISHID NUMBER (4) NOT NULL,
+   INVENTORYID NUMBER (4) NOT NULL,
+   QUANTITY NUMBER (4) NOT NULL,
+   CONSTRAINT FK_MENU_DISHRECIPE FOREIGN KEY (DISHID) REFERENCES MENU(ID),
+   CONSTRAINT FK_INVENTORY_DISHRECIPE FOREIGN KEY (INVENTORYID) REFERENCES INVENTORY(ID))';
+   
+   
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1215,1,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1215,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1216,2,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1216,18,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1216,7,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1207,1,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1208,7,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1208,9,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1208,10,5)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1208,2,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1217,2,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1217,11,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1217,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1210,4,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1211,17,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1211,10,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1211,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1212,3,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1212,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1213,10,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1213,2,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1213,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1214,3,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1214,10,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1214,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1218,19,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1218,2,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1218,23,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1218,20,4)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1219,3,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1219,5,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1219,10,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1220,16,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1220,10,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1220,25,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1221,1,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1221,10,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1221,18,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1222,1,1)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1222,10,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1222,18,3)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1222,2,4)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1224,12,6)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1225,13,8)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1226,15,9)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1227,14,10)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1230,2,2)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1230,6,3)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1230,10,4)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1231,3,5)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1231,10,6)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1231,9,7)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1231,8,8)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1231,7,9)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1232,3,10)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1232,10,11)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1232,9,12)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1232,8,13)';
+EXECUTE IMMEDIATE 'Insert into DISHRECIPE values (1232,7,14)';
+
+   
+ END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='DELIVERYORDER';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('DELIVERYORDER TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE DELIVERYORDER (
+
+  ID NUMBER (10) NOT NULL,
+  CUSTOMERID NUMBER (8) NOT NULL,
+  ZIPCODE NUMBER (5) NOT NULL,
+  DELIVERID NUMBER (8) NOT NULL,
+  DATETIME DATE NOT NULL,
+  ADDRESS CHAR (255) NOT NULL,
+  PHONENUMBER NUMBER (10) NOT NULL,
+  ORDERSTATUS VARCHAR2 (20) NOT NULL,
+  DELIVERYSTATUS VARCHAR2 (20) NOT NULL,
+  PAYMENTID NUMBER (10),
+  CONSTRAINT DELIVERYORDER_PK PRIMARY KEY (ID),
+  CONSTRAINT FK_CUSTOMER_DELIVERYORDER FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMER(ID),
+ CONSTRAINT FK_ZIPCODE_DELIVERYORDER FOREIGN KEY (ZIPCODE) REFERENCES DELIVERYAREA(ZIPCODE),
+   CONSTRAINT FK_DELIVERYATTENDANT_DELIVERYORDER FOREIGN KEY (DELIVERID) REFERENCES DELIVERYATTENDANT(ID),
+   CONSTRAINT FK_PAYMENT_DELIVERYORDER FOREIGN KEY (PAYMENTID) REFERENCES PAYMENT(ID))';
+   
+   
+   
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (500,2002,2120,229,to_date(''05-NOV-21 15:45:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''Delivery'',''Accepted'',2453)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (501,2005,2115,230,to_date(''05-NOV-21 16:43:05'',''DD-MON-RR HH24:MI:SS''),''Mass Ave'',8345623986,''Preparing'',''Accepted'',2454)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (502,2048,2167,231,to_date(''05-NOV-21 17:43:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987592,''Delivery'',''Accepted'',2455)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (503,2011,2111,232,to_date(''06-NOV-21 14:13:05'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7654569876,''Preparing'',''Accepted'',2456)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (492,2013,2267,107,to_date(''03-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),''Longwood'',8764563456,''Delivered'',''Accepted'',2445)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (493,2003,2167,111,to_date(''04-NOV-21 14:43:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',8456782345,''On the way'',''Accepted'',2446)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (494,2002,2120,223,to_date(''04-NOV-21 14:43:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''Delivery'',''Accepted'',2447)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (495,2005,2115,224,to_date(''04-NOV-21 13:43:05'',''DD-MON-RR HH24:MI:SS''),''Mass Ave'',8345623986,''Preparing'',''Accepted'',2448)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (496,2048,2167,225,to_date(''04-NOV-21 14:43:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987592,''On the way'',''Accepted'',2449)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (497,2011,2111,226,to_date(''04-NOV-21 15:43:05'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7654569876,''Preparing'',''Accepted'',2450)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (498,2013,2267,227,to_date(''04-NOV-21 14:43:05'',''DD-MON-RR HH24:MI:SS''),''Longwood'',8764563456,''Delivered'',''Accepted'',2451)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (499,2003,2167,228,to_date(''05-NOV-21 15:43:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',8456782345,''On the way'',''Accepted'',2452)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (504,2013,2267,243,to_date(''06-NOV-21 14:23:05'',''DD-MON-RR HH24:MI:SS''),''Longwood'',8764563456,''Delivered'',''Accepted'',2457)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (505,2003,2167,233,to_date(''06-NOV-21 14:33:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',8456782345,''On the way'',''Accepted'',2458)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (506,2002,2120,242,to_date(''06-NOV-21 14:43:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''On the way'',''Accepted'',2459)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (507,2005,2115,243,to_date(''06-NOV-21 14:53:05'',''DD-MON-RR HH24:MI:SS''),''Mass Ave'',8345623986,''On the way'',''Accepted'',2460)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (508,2048,2167,244,to_date(''07-NOV-21 14:53:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987592,''On the way'',''Accepted'',2461)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (509,2011,2111,245,to_date(''07-NOV-21 14:13:05'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7654569876,''Delivery'',''Accepted'',2462)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (510,2013,2267,113,to_date(''07-NOV-21 22:23:05'',''DD-MON-RR HH24:MI:SS''),''Longwood'',8764563456,''On the way'',''Accepted'',2463)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (511,2003,2167,114,to_date(''07-NOV-21 21:33:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',8456782345,''Delivery'',''Accepted'',2464)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (512,2002,2120,115,to_date(''08-NOV-21 18:33:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''Preparing'',''Accepted'',2465)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (513,2005,2115,116,to_date(''08-NOV-21 19:43:05'',''DD-MON-RR HH24:MI:SS''),''Mass Ave'',8345623986,''Delivery'',''Accepted'',2466)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (514,2048,2167,233,to_date(''08-NOV-21 20:23:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987592,''Preparing'',''Accepted'',2467)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (515,2011,2111,242,to_date(''09-NOV-21 12:13:05'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7654569876,''Delivered'',''Accepted'',2468)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (456,2061,2111,107,to_date(''02-OCT-21 11:25:00'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7462987605,''Preparing'',''Accepted'',2355)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (457,2062,2120,111,to_date(''02-OCT-21 11:40:00'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',7462987606,''Delivered'',''Accepted'',2356)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (458,2063,2167,223,to_date(''03-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987607,''On the way'',''Accepted'',2327)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (459,2064,2267,224,to_date(''03-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Longwood'',7462987608,''Delivery'',''Accepted'',2328)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (460,2065,2267,225,to_date(''04-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Longwood'',7462987609,''Preparing'',''Accepted'',2332)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (461,2066,2131,226,to_date(''04-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),''Roslindale'',7462987610,''On the way'',''Accepted'',2333)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (462,2067,2129,227,to_date(''05-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),''Charlestown'',7462987611,''Preparing'',''Accepted'',2334)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (463,2068,2144,228,to_date(''06-OCT-21 16:50:00'',''DD-MON-RR HH24:MI:SS''),''FayVille'',7462987612,''Delivered'',''Accepted'',2338)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (464,2069,2142,229,to_date(''07-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Essex'',7462987613,''On the way'',''Accepted'',2340)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (465,2070,2141,230,to_date(''07-OCT-21 18:50:00'',''DD-MON-RR HH24:MI:SS''),''Elmwood'',7462987614,''Delivery'',''Accepted'',2343)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (466,2071,2115,231,to_date(''08-OCT-21 19:10:00'',''DD-MON-RR HH24:MI:SS''),''Fenway'',7462987615,''Preparing'',''Accepted'',2348)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (467,2072,2111,232,to_date(''09-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7462987616,''On the way'',''Accepted'',2349)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (479,2084,2167,243,to_date(''10-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987628,''On the way'',''Accepted'',2401)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (468,2073,2120,233,to_date(''10-OCT-21 12:50:00'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',7462987617,''Preparing'',''Accepted'',2350)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (469,2074,2167,242,to_date(''11-OCT-21 14:50:00'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987618,''Delivered'',''Accepted'',2354)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (470,2075,2267,243,to_date(''12-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),''Longwood'',7462987619,''On the way'',''Accepted'',2357)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (471,2076,2131,244,to_date(''12-OCT-21 15:50:00'',''DD-MON-RR HH24:MI:SS''),''Roslindale'',7462987620,''Delivery'',''Accepted'',2361)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (472,2077,2129,245,to_date(''13-OCT-21 16:50:00'',''DD-MON-RR HH24:MI:SS''),''Charlestown'',7462987621,''Preparing'',''Accepted'',2362)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (473,2078,2144,113,to_date(''23-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''FayVille'',7462987622,''On the way'',''Accepted'',2363)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (474,2079,2142,114,to_date(''23-OCT-21 18:50:00'',''DD-MON-RR HH24:MI:SS''),''Essex'',7462987623,''Preparing'',''Accepted'',2367)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (475,2080,2141,115,to_date(''24-OCT-21 19:50:00'',''DD-MON-RR HH24:MI:SS''),''Elmwood'',7462987624,''Delivered'',''Accepted'',2368)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (476,2081,2115,116,to_date(''25-OCT-21 20:50:00'',''DD-MON-RR HH24:MI:SS''),''Fenway'',7462987625,''On the way'',''Accepted'',2371)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (477,2082,2111,233,to_date(''26-OCT-21 21:50:00'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7462987626,''Delivery'',''Accepted'',2372)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (478,2083,2120,242,to_date(''27-OCT-21 13:50:00'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',7462987627,''Preparing'',''Accepted'',2400)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (480,2085,2267,244,to_date(''01-NOV-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),''Longwood'',7462987629,''Delivery'',''Accepted'',2402)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (481,2061,2111,223,to_date(''02-NOV-21 11:00:00'',''DD-MON-RR HH24:MI:SS''),''Tremont Street'',7462987605,''Preparing'',''Accepted'',2403)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (482,2062,2120,227,to_date(''03-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',7462987606,''Delivered'',''Accepted'',2404)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (483,2077,2129,114,to_date(''04-NOV-21 13:00:00'',''DD-MON-RR HH24:MI:SS''),''Charlestown'',7462987621,''On the way'',''Accepted'',2405)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (484,2075,2267,243,to_date(''04-NOV-21 14:00:00'',''DD-MON-RR HH24:MI:SS''),''Longwood'',7462987619,''On the way'',''Accepted'',2406)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (485,2081,2115,243,to_date(''05-NOV-21 16:00:00'',''DD-MON-RR HH24:MI:SS''),''Fenway'',7462987625,''On the way'',''Accepted'',2407)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (486,2070,2141,233,to_date(''06-NOV-21 18:00:00'',''DD-MON-RR HH24:MI:SS''),''Elmwood'',7462987614,''On the way'',''Accepted'',2408)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (487,2068,2144,233,to_date(''07-NOV-21 19:00:00'',''DD-MON-RR HH24:MI:SS''),''FayVille'',7462987612,''Delivery'',''Accepted'',2433)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (488,2069,2142,242,to_date(''08-NOV-21 20:00:00'',''DD-MON-RR HH24:MI:SS''),''Essex'',7462987613,''On the way'',''Accepted'',2434)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (489,2078,2144,243,to_date(''12-NOV-21 10:00:00'',''DD-MON-RR HH24:MI:SS''),''FayVille'',7462987622,''Cancel'',''Rejected'',2435)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (490,2078,2144,231,to_date(''12-NOV-21 11:00:00'',''DD-MON-RR HH24:MI:SS''),''FayVille'',7462987622,''Delivered'',''Accepted'',2436)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (491,2074,2167,244,to_date(''12-NOV-21 12:00:00'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',7462987618,''Delivered'',''Accepted'',2437)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (516,2013,2267,233,to_date(''09-NOV-21 13:13:05'',''DD-MON-RR HH24:MI:SS''),''Longwood'',8764563456,''On the way'',''Accepted'',2469)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (517,2003,2167,242,to_date(''09-NOV-21 14:44:05'',''DD-MON-RR HH24:MI:SS''),''Cambridge'',8456782345,''On the way'',''Accepted'',2470)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (518,2002,2120,244,to_date(''10-NOV-21 15:55:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''On the way'',''Accepted'',2471)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (519,2005,2115,223,to_date(''10-NOV-21 15:55:05'',''DD-MON-RR HH24:MI:SS''),''Mass Ave'',8345623986,''On the way'',''Accepted'',2472)';
+EXECUTE IMMEDIATE 'Insert into DELIVERYORDER values (520,2002,2120,227,to_date(''10-NOV-21 15:55:05'',''DD-MON-RR HH24:MI:SS''),''Hungtinton'',8763452345,''Delivery'',''Accepted'',2473)';
+
+   
+    
+   
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='FOODLIST';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('FOODLIST TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE FOODLIST (
+
+  DINEINORDERID NUMBER (10),
+  DISHID NUMBER (4) NOT NULL,
+  QUANTITY NUMBER (4) NOT NULL,
+  DELIVERYORDERID NUMBER (10),
+  CONSTRAINT FK_DINEINORDER_FOODLIST FOREIGN KEY (DINEINORDERID) REFERENCES DINEINORDER(ID),
+  CONSTRAINT FK_DELIVERYORDERID_FOODLIST FOREIGN KEY (DELIVERYORDERID) REFERENCES DELIVERYORDER(ID),
+  CONSTRAINT FK_MENU_FOODLIST FOREIGN KEY (DISHID) REFERENCES MENU(ID))';
+  
+ 
+
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,1,500)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,1,501)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,1,500)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1216,1,502)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1207,2,503)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1208,2,492)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1217,2,493)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1210,2,494)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1211,2,495)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1212,2,496)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1213,2,497)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,1,498)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,2,499)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,3,504)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1218,4,505)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1219,5,506)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1220,6,507)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1221,2,508)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1222,2,509)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1223,2,510)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1224,2,511)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1225,1,512)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1226,3,513)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1227,4,514)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1230,2,515)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1231,2,456)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1232,2,457)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1230,2,458)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1231,2,459)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1232,2,460)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,2,461)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,1,462)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1216,1,463)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1207,1,464)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1208,1,465)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1217,1,466)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1210,1,467)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1211,1,479)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1212,1,468)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1213,1,469)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,1,470)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,2,471)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,2,472)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1215,2,473)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1216,2,474)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1207,2,475)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1208,2,476)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1217,3,477)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1210,3,478)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1211,3,480)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1212,3,481)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1213,3,482)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,3,483)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1213,1,484)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1214,1,485)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1218,1,486)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1219,1,487)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1220,1,488)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1221,1,489)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1222,1,490)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1223,1,491)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1224,1,516)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1225,1,517)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1226,2,518)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1227,2,519)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (null,1221,2,520)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (39,1215,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (39,1215,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (39,1216,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (40,1207,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (37,1208,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (38,1217,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (42,1210,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (43,1211,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (41,1212,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (35,1213,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (35,1214,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (35,1214,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (36,1214,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (44,1218,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (45,1219,4,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (46,1220,5,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (47,1221,6,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (48,1222,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (34,1223,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (49,1224,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (50,1225,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (51,1226,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (51,1227,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (51,1230,4,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (51,1231,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (52,1232,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (53,1230,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (54,1231,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (55,1232,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (56,1215,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (57,1215,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (58,1216,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (59,1207,4,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (59,1208,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (59,1217,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (59,1210,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (60,1211,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (61,1212,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (62,1213,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (63,1214,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (64,1214,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (65,1214,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (66,1215,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (66,1216,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (66,1207,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (66,1208,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (66,1217,5,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (67,1210,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (68,1211,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (69,1212,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (70,1213,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (71,1214,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (72,1213,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (73,1214,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (73,1218,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (73,1219,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (73,1220,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (73,1221,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (74,1222,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (75,1223,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (76,1224,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (77,1225,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1226,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1227,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1221,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1222,3,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1223,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (78,1224,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (79,1225,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (80,1230,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (81,1231,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (82,1232,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (83,1221,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (84,1222,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (85,1223,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (86,1224,1,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (87,1225,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (88,1230,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (89,1231,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (90,1232,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (91,1225,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (92,1230,2,null)';
+EXECUTE IMMEDIATE 'Insert into FOODLIST values (93,1231,2,null)';
+  
+END IF;
+COMMIT;
+
+SELECT count(*) into nCount FROM user_tables where table_name ='RESERVATION';
+IF(nCount > 0)
+THEN
+DBMS_OUTPUT.PUT_LINE('RESERVATION TABLE ALREADY EXISTS');
+ELSE
+EXECUTE IMMEDIATE 'CREATE TABLE RESERVATION (
+ID NUMBER (4) NOT NULL,
+CUSTOMERID NUMBER (8) NOT NULL,
+DATETIMEIN DATE NULL,
+DATETIMEOUT  DATE NULL,
+TABLEID NUMBER(4) NOT NULL,
+STATUS VARCHAR2 (20) NOT NULL,
+CONSTRAINT RESERVATION_PK PRIMARY KEY (ID),
+CONSTRAINT FK_RESERVATION_CUSTOMER FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMER(ID),
+CONSTRAINT FK_RESERVATION_DININGTABLE FOREIGN KEY (TABLEID) REFERENCES DININGTABLE(ID))';
+
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (15,2040,null,null,448,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (16,2041,null,null,556,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (17,2042,null,null,666,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (18,2043,null,null,333,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (19,2044,null,null,765,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (20,2045,null,null,879,''Cancel'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (1,2021,to_date(''01-NOV-21 20:29:29'',''DD-MON-RR HH24:MI:SS''),to_date(''01-NOV-21 23:29:52'',''DD-MON-RR HH24:MI:SS''),679,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (2,2022,to_date(''01-NOV-21 04:30:01'',''DD-MON-RR HH24:MI:SS''),to_date(''01-NOV-21 23:45:18'',''DD-MON-RR HH24:MI:SS''),800,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (3,2023,to_date(''02-DEC-21 15:31:33'',''DD-MON-RR HH24:MI:SS''),to_date(''02-NOV-21 18:31:46'',''DD-MON-RR HH24:MI:SS''),801,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (4,2024,to_date(''02-NOV-21 23:35:43'',''DD-MON-RR HH24:MI:SS''),to_date(''02-NOV-21 23:55:20'',''DD-MON-RR HH24:MI:SS''),802,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (5,2025,to_date(''02-NOV-21 22:33:34'',''DD-MON-RR HH24:MI:SS''),to_date(''02-NOV-21 23:55:10'',''DD-MON-RR HH24:MI:SS''),803,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (6,2026,to_date(''03-NOV-21 13:37:00'',''DD-MON-RR HH24:MI:SS''),to_date(''03-NOV-21 16:37:10'',''DD-MON-RR HH24:MI:SS''),804,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (7,2027,to_date(''03-NOV-21 15:37:38'',''DD-MON-RR HH24:MI:SS''),to_date(''03-NOV-21 18:37:48'',''DD-MON-RR HH24:MI:SS''),805,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (8,2028,to_date(''04-NOV-21 15:38:18'',''DD-MON-RR HH24:MI:SS''),to_date(''04-NOV-21 19:38:31'',''DD-MON-RR HH24:MI:SS''),806,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (9,2029,to_date(''04-NOV-21 16:38:42'',''DD-MON-RR HH24:MI:SS''),to_date(''05-DEC-21 20:38:52'',''DD-MON-RR HH24:MI:SS''),807,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (10,2030,to_date(''05-NOV-21 11:39:05'',''DD-MON-RR HH24:MI:SS''),to_date(''05-NOV-21 13:39:16'',''DD-MON-RR HH24:MI:SS''),808,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (11,2031,to_date(''05-NOV-21 19:39:34'',''DD-MON-RR HH24:MI:SS''),to_date(''05-NOV-21 20:39:51'',''DD-MON-RR HH24:MI:SS''),809,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (12,2032,to_date(''06-NOV-21 16:40:02'',''DD-MON-RR HH24:MI:SS''),to_date(''06-NOV-21 18:40:27'',''DD-MON-RR HH24:MI:SS''),810,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (13,2033,to_date(''07-NOV-21 13:40:40'',''DD-MON-RR HH24:MI:SS''),to_date(''07-NOV-21 17:40:50'',''DD-MON-RR HH24:MI:SS''),811,''Reserved'')';
+EXECUTE IMMEDIATE 'Insert into RESERVATION values (14,2034,to_date(''07-NOV-21 22:41:04'',''DD-MON-RR HH24:MI:SS''),to_date(''07-NOV-21 23:55:30'',''DD-MON-RR HH24:MI:SS''),812,''Reserved'')';
+
+END IF;
+COMMIT;
+
+
+End;
+
+
+
+
