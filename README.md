@@ -75,7 +75,55 @@ Proposed Solution for the Identified problems
 
 ERD
 --
-![image](public/ER-Diagram.jpeg)
+![image](ER-Diagram.jpeg)
+
+Business Rules
+--
+>Following mentioned are the business rules
+>>One attendant can serve one or many diningTable .
+>>An employee may or may not be an attendant, but an attendant must be an employee.
+>>An employee may or may not be a deliveryAttendant but a deliveryAttendant must be an employee.
+>>One deliveryAttendant is assigned to a specific deliveryArea depending on the zip of deliveryArea.
+>>One deliveryAttendant can deliver none or many deliveryOrders.
+>>One deliveryArea can be associated with one or many deliveryOrders.
+>>One deliveryOrder can have one or many orders, each having an orderId and dishId stored in the foodList.
+>>One deliveryOrder can be associated with one customer.
+>>Member status can be updated only by the admin, Ex: active, inactive.
+>>Inventory status can be updated only by the admin, Ex: in stock or out of stock
+>>Reservation status is updated automatically to available or booked (using a view).
+>>Every customer may or may not be a special member of the restaurant. 
+>>Every customer may or may not have a reservation.
+>>One diningTable can have no or multiple customers.
+>>One dineinOrder can have multiple orders having orderIds present in the foodList and one foodList tuple can be associated with one order.
+>>One diningTable can be associated with one or multiple orders having different orderIds in the orderList
+>>One diningTable can have no or only one reservation at any time.
+>>One diningTable can be associated with one payment.
+>>A diningTable can have multiple dineinOrder and one dineinOrder is associated with a diningTable.
+
+Security Rules: (User level access / Permissions)
+--
+>Admin 
+>>All level of access for all the entities.
+
+>Manager 
+>>Read only access to payment, dishRecipe , orderList , customer.
+>>READ/WRITE/UPDATE access to employee , inventory , menu , dinningTable , reservation.
+
+>Attendant
+>>No access to payment, inventory ,customer , dishRecipe.
+>>Read Only access to reservation, attendant , OrderList ,dineInOrder, menu.
+>>READ/WRITE/UPDATE access to employee.
+
+>Delivery Agent
+>>No access to payment, inventory ,customer , dishRecipe.
+>>Read Only access to deliveryOrder, deliveryArea.
+>>READ/WRITE/UPDATE access to employee.
+
+>Customer 
+>>No access to inventory ,customer , dishRecipe ,
+>>Read Only access to the menu , payment only.
+>>READ/WRITE/UPDATE access to customer.
+
 
 User
 --
