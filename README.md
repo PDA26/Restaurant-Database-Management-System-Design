@@ -1,4 +1,4 @@
-DAMG6210_Project
+Restaurant-Database-Management-System-Design
 ==
 
 Topic
