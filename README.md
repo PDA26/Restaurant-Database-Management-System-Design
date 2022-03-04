@@ -73,6 +73,10 @@ Proposed Solution for the Identified problems
 >Free delivery of birthday cake for the prime members.
 >>The birthdays of each of the members will be stored in the attribute member_birth. A trigger will be generated on their birthday, ensuring free delivery of birthday cake to each of the members
 
+ERD
+--
+![image](public/ER-Diagram.jpeg)
+
 User
 --
 1.Admin                Password: Nature@74876253<br>
