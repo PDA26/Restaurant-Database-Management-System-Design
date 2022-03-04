@@ -5,12 +5,6 @@ Topic
 --
 Restaurant Database Management System
 
-Member
---
-Xiaoyang Cai:	Cai.xiao@northeastern.edu<br>
-Minghui Qiu: qiu.min@northeastern.edu<br>
-Manju Sharma:	Sharma.manj@northeastern.edu<br>
-Kusha Choudhary:	Choudhary.Kus@northeastern.edu<br>
 
 Problem Statement
 --
