@@ -79,26 +79,26 @@ ERD
 
 Business Rules
 --
->Following mentioned are the business rules
->>One attendant can serve one or many diningTable .
->>An employee may or may not be an attendant, but an attendant must be an employee.
->>An employee may or may not be a deliveryAttendant but a deliveryAttendant must be an employee.
->>One deliveryAttendant is assigned to a specific deliveryArea depending on the zip of deliveryArea.
->>One deliveryAttendant can deliver none or many deliveryOrders.
->>One deliveryArea can be associated with one or many deliveryOrders.
->>One deliveryOrder can have one or many orders, each having an orderId and dishId stored in the foodList.
->>One deliveryOrder can be associated with one customer.
->>Member status can be updated only by the admin, Ex: active, inactive.
->>Inventory status can be updated only by the admin, Ex: in stock or out of stock
->>Reservation status is updated automatically to available or booked (using a view).
->>Every customer may or may not be a special member of the restaurant. 
->>Every customer may or may not have a reservation.
->>One diningTable can have no or multiple customers.
->>One dineinOrder can have multiple orders having orderIds present in the foodList and one foodList tuple can be associated with one order.
->>One diningTable can be associated with one or multiple orders having different orderIds in the orderList
->>One diningTable can have no or only one reservation at any time.
->>One diningTable can be associated with one payment.
->>A diningTable can have multiple dineinOrder and one dineinOrder is associated with a diningTable.
+1.	One attendant can serve one or many diningTable .
+2.	An employee may or may not be an attendant, but an attendant must be an employee.
+3.	An employee may or may not be a deliveryAttendant but a deliveryAttendant must be an employee.
+4.	One deliveryAttendant is assigned to a specific deliveryArea depending on the zip of deliveryArea.
+5.	One deliveryAttendant can deliver none or many deliveryOrders.
+6.	One deliveryArea can be associated with one or many deliveryOrders.
+7.	One deliveryOrder can have one or many orders, each having an orderId and dishId stored in the foodList.
+8.	One deliveryOrder can be associated with one customer.
+9.	member status can be updated only by the admin, Ex: active, inactive.
+10.	inventory status can be updated only by the admin, Ex: in stock or out of stock
+11.	reservation status is updated automatically to available or booked (using a view).
+12.	Every customer may or may not be a special member of the restaurant. 
+13.	Every customer may or may not have a reservation.
+14.	One diningTable can have no or multiple customers.
+15.	One dineinOrder can have multiple orders having orderIds present in the foodList and one foodList tuple can be associated with one order.
+16.	One diningTable can be associated with one or multiple orders having different orderIds in the orderList
+17.	One diningTable can have no or only one reservation at any time.
+18.	One diningTable can be associated with one payment.
+19.	A diningTable can have multiple dineinOrder and one dineinOrder is associated with a diningTable.
+
 
 Security Rules: (User level access / Permissions)
 --
